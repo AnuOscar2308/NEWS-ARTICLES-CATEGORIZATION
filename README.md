@@ -21,3 +21,26 @@ Organizations that rely on news and information monitoring (healthcare, finance,
 - Reduce manual review time.
 
 Manual tagging and categorisation do not scale. The business need is an automated classifier that can label incoming text into the correct domain with reasonable accuracy and consistency.
+## Methodology:
+
+### 1) Data Collection (Web Scraping)
+
+Scraped HTML content from multiple news sources using requests
+
+Parsed and extracted readable text using BeautifulSoup
+
+2) Text Cleaning
+
+Removed scripts/styles and HTML tags
+
+Extracted clean visible text using a reusable cleaning function (remove_tags())
+
+3) NLP Preprocessing (Feature Preparation)
+
+Tokenized text (regex/NLTK tokenizers)
+
+Normalized tokens (lowercasing)
+
+Removed stopwords (NLTK English stopwords)
+
+Generated exploratory frequency distributions (NLTK FreqDist) to understand dominant terms per category
