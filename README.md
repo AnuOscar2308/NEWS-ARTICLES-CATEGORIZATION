@@ -23,7 +23,7 @@ Organizations that rely on news and information monitoring (healthcare, finance,
 Manual tagging and categorisation do not scale. The business need is an automated classifier that can label incoming text into the correct domain with reasonable accuracy and consistency.
 ## Methodology:
 
-#### 1) Data Collection (Web Scraping)
+### 1) Data Collection (Web Scraping)
 
 - Scraped HTML content from multiple news sources using requests
 
@@ -108,3 +108,25 @@ Metrics reported:
 ### 7) Prediction Demo
 
 Trained a final Random Forest classifier and predicted the category of sample headlines by transforming text via the trained CountVectorizer.
+
+## Skills:
+
+- Python
+
+- Web Scraping: requests, BeautifulSoup
+
+- NLP: tokenization, stopword removal, normalization, frequency analysis (NLTK)
+
+- Feature Engineering: Bag-of-Words (CountVectorizer), (imports also include TF-IDF support)
+
+- Supervised ML Modeling (Multi-class):
+
+- Logistic Regression, Random Forest, Naive Bayes, SVM, Decision Tree, KNN
+
+- One-vs-Rest strategy for multi-class classification
+
+- Model Evaluation: accuracy, precision, recall, F1-score
+
+- Data Handling: pandas, numpy
+
+- Visualization: matplotlib, seaborn
