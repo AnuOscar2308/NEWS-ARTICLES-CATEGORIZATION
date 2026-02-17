@@ -23,7 +23,7 @@ Organizations that rely on news and information monitoring (healthcare, finance,
 Manual tagging and categorisation do not scale. The business need is an automated classifier that can label incoming text into the correct domain with reasonable accuracy and consistency.
 ## Methodology:
 
-### 1) Data Collection (Web Scraping)
+#### 1) Data Collection (Web Scraping)
 
 - Scraped HTML content from multiple news sources using requests
 
