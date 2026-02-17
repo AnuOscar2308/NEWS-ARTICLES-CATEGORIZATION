@@ -63,16 +63,48 @@ Manual tagging and categorisation do not scale. The business need is an automate
 
 ### 5) ML Data Modeling (Supervised Learning)
 
-Encoded labels:
+- Encoded labels:
 
-Created CategoryId using factorize()
+  - Created CategoryId using factorize()
 
-Train/test split:
+- Train/test split:
 
-70/30 split using train_test_split(shuffle=True, random_state=0)
+  - 70/30 split using train_test_split(shuffle=True, random_state=0)
 
-Vectorization (Feature Engineering):
+- Vectorization (Feature Engineering):
 
-Converted raw text into numeric features using Bag-of-Words
+  - Converted raw text into numeric features using Bag-of-Words
 
-CountVectorizer(max_features=5000) → document-term matrix
+  - CountVectorizer(max_features=5000) → document-term matrix
+
+ ### 6) Model Training & Evaluation
+
+Trained and evaluated multiple baseline classifiers (wrapped in OneVsRestClassifier for multi-class):
+
+- Logistic Regression
+
+- Random Forest
+
+- Multinomial Naive Bayes
+
+- Support Vector Classifier (SVC)
+
+- Decision Tree
+
+- K-Nearest Neighbors
+
+- Gaussian Naive Bayes
+
+Metrics reported:
+
+- Accuracy
+
+- Precision (micro)
+
+- Recall (micro)
+
+- F1-score (micro)
+
+### 7) Prediction Demo
+
+Trained a final Random Forest classifier and predicted the category of sample headlines by transforming text via the trained CountVectorizer.
