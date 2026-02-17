@@ -25,22 +25,54 @@ Manual tagging and categorisation do not scale. The business need is an automate
 
 ### 1) Data Collection (Web Scraping)
 
-Scraped HTML content from multiple news sources using requests
+- Scraped HTML content from multiple news sources using requests
 
-Parsed and extracted readable text using BeautifulSoup
+- Parsed and extracted readable text using BeautifulSoup
 
-2) Text Cleaning
+### 2) Text Cleaning
 
-Removed scripts/styles and HTML tags
+- Removed scripts/styles and HTML tags
 
-Extracted clean visible text using a reusable cleaning function (remove_tags())
+- Extracted clean visible text using a reusable cleaning function (remove_tags())
 
-3) NLP Preprocessing (Feature Preparation)
+### 3) NLP Preprocessing (Feature Preparation)
 
-Tokenized text (regex/NLTK tokenizers)
+- Tokenized text (regex/NLTK tokenizers)
 
-Normalized tokens (lowercasing)
+- Normalized tokens (lowercasing)
 
-Removed stopwords (NLTK English stopwords)
+- Removed stopwords (NLTK English stopwords)
 
-Generated exploratory frequency distributions (NLTK FreqDist) to understand dominant terms per category
+- Generated exploratory frequency distributions (NLTK FreqDist) to understand dominant terms per category
+
+### 4) Dataset Construction
+
+- Exported tokens/text into CSVs:
+
+  - file1.csv (Technology)
+
+  - file2.csv (Sports)
+
+  - file3.csv (Business/Economy)
+
+  - file4.csv (Medical/Health)
+
+- Manually appended these category files into a single labeled dataset: Dataset.csv
+
+- Columns used in modeling: Text, Category
+
+### 5) ML Data Modeling (Supervised Learning)
+
+Encoded labels:
+
+Created CategoryId using factorize()
+
+Train/test split:
+
+70/30 split using train_test_split(shuffle=True, random_state=0)
+
+Vectorization (Feature Engineering):
+
+Converted raw text into numeric features using Bag-of-Words
+
+CountVectorizer(max_features=5000) → document-term matrix
