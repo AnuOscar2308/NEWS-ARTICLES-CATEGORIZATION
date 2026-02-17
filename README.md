@@ -8,7 +8,7 @@ This project builds an end-to-end pipeline that scrapes news text from multiple 
 
 After generating domain-wise text files (file1.csv–file4.csv), the outputs were manually appended into a single labelled dataset (Dataset.csv), which served as the modeling source for training and evaluating multiple ML classifiers.
 
-##Business Problem:
+## Business Problem:
 
 Organizations that rely on news and information monitoring (healthcare, finance, tech, media intelligence, consulting) need scalable ways to:
 
