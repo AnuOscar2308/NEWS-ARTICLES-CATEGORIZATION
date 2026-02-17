@@ -126,7 +126,25 @@ Trained a final Random Forest classifier and predicted the category of sample he
 - One-vs-Rest strategy for multi-class classification
 
 - Model Evaluation: accuracy, precision, recall, F1-score
-
+  
 - Data Handling: pandas, numpy
 
 - Visualization: matplotlib, seaborn
+
+## Results
+
+- Successfully created a labeled text dataset from multiple news domains.
+
+- Built a multi-class classification pipeline that transforms raw text into features and evaluates multiple ML models.
+
+- A final Random Forest model was trained and used to classify unseen sample headlines into the expected categories (Technology, Sports, Business, Medical).
+
+## Business Recommendation
+
+For a real-world production use case:
+
+- This approach can be used to automatically tag and route incoming news/articles by domain.
+
+- Starting with a lightweight baseline (Logistic Regression / Naive Bayes) for speed and interpretability, then compare against ensemble methods (Random Forest) if accuracy is the priority.
+
+- Storing the trained vectorizer + model together so predictions remain consistent.
