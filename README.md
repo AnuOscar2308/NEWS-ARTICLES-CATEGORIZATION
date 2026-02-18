@@ -11,50 +11,35 @@ After generating domain-wise text files (file1.csv–file4.csv), the outputs wer
 ## Business Problem:
 
 Organizations that rely on news and information monitoring (healthcare, finance, tech, media intelligence, consulting) need scalable ways to:
-
 - Organise large volumes of unstructured text
-
 - Identify domain-specific content quickly
-
 - Route articles to the right teams (e.g., health vs business)
-
 - Reduce manual review time.
 
 Manual tagging and categorisation do not scale. The business need is an automated classifier that can label incoming text into the correct domain with reasonable accuracy and consistency.
+
 ## Methodology:
 
 ### 1) Data Collection (Web Scraping)
-
 - Scraped HTML content from multiple news sources using requests
-
 - Parsed and extracted readable text using BeautifulSoup
 
 ### 2) Text Cleaning
-
 - Removed scripts/styles and HTML tags
-
 - Extracted clean visible text using a reusable cleaning function (remove_tags())
 
 ### 3) NLP Preprocessing (Feature Preparation)
-
 - Tokenized text (regex/NLTK tokenizers)
-
 - Normalized tokens (lowercasing)
-
 - Removed stopwords (NLTK English stopwords)
-
 - Generated exploratory frequency distributions (NLTK FreqDist) to understand dominant terms per category
 
 ### 4) Dataset Construction
 
 - Exported tokens/text into CSVs:
-
   - file1.csv (Technology)
-
   - file2.csv (Sports)
-
   - file3.csv (Business/Economy)
-
   - file4.csv (Medical/Health)
 
 - Manually appended these category files into a single labeled dataset: Dataset.csv
@@ -64,46 +49,31 @@ Manual tagging and categorisation do not scale. The business need is an automate
 ### 5) ML Data Modeling (Supervised Learning)
 
 - Encoded labels:
-
   - Created CategoryId using factorize()
 
 - Train/test split:
-
   - 70/30 split using train_test_split(shuffle=True, random_state=0)
 
 - Vectorization (Feature Engineering):
-
   - Converted raw text into numeric features using Bag-of-Words
-
   - CountVectorizer(max_features=5000) → document-term matrix
 
  ### 6) Model Training & Evaluation
 
 Trained and evaluated multiple baseline classifiers (wrapped in OneVsRestClassifier for multi-class):
-
 - Logistic Regression
-
 - Random Forest
-
 - Multinomial Naive Bayes
-
 - Support Vector Classifier (SVC)
-
 - Decision Tree
-
-- K-Nearest Neighbors
-
+- K-Nearest Neighbours
 - Gaussian Naive Bayes
 
 Metrics reported:
-
 - Accuracy
-
-- Precision (micro)
-
-- Recall (micro)
-
-- F1-score (micro)
+- Precision
+- Recall
+- F1-score
 
 ### 7) Prediction Demo
 
@@ -111,30 +81,20 @@ Trained a final Random Forest classifier and predicted the category of sample he
 
 ## Skills:
 
-- Python
-
-- Web Scraping: requests, BeautifulSoup
-
-- NLP: tokenization, stopword removal, normalization, frequency analysis (NLTK)
-
-- Feature Engineering: Bag-of-Words (CountVectorizer), (imports also include TF-IDF support)
-
-- Supervised ML Modeling (Multi-class):
-
-- Logistic Regression, Random Forest, Naive Bayes, SVM, Decision Tree, KNN
-
+- **Programming:** Python
+- **Web Scraping:** Requests, BeautifulSoup
+- **NLP:** Tokenization, Stopword removal, Normalization, Frequency analysis (NLTK)
+- **Feature Engineering:** Bag-of-Words (CountVectorizer)
+- **Supervised ML Modeling (Multi-class):** Logistic Regression, Random Forest, Naive Bayes, SVM, Decision Tree, KNN
 - One-vs-Rest strategy for multi-class classification
-
-- Model Evaluation: accuracy, precision, recall, F1-score
-  
-- Data Handling: pandas, numpy
-
-- Visualization: matplotlib, seaborn
+- **Model Evaluation:** accuracy, precision, recall, F1-score
+- **Data Handling:** pandas, numpy
+- **Visualization:** matplotlib, seaborn
 
 ## Results
 
 - Successfully created a labeled text dataset from multiple news domains.
-
+  
 - Built a multi-class classification pipeline that transforms raw text into features and evaluates multiple ML models.
 
 - A final Random Forest model was trained and used to classify unseen sample headlines into the expected categories (Technology, Sports, Business, Medical).
